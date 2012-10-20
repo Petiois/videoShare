@@ -3,16 +3,18 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 from django.contrib.auth import login
 from django.contrib.auth.views import login, logout
+from videoShare.views import *
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
+handler404 = 'videoShare.views.custom404'
+
 urlpatterns = patterns('',
 
-    # Examples:
-    # url(r'^$', 'videoShare.views.home', name='home'),
-    # url(r'^videoShare/', include('videoShare.foo.urls')),
+    ('^$', home),    
+
 	(r'^accounts/login/$',  login),
     (r'^accounts/logout/$', logout),
 
