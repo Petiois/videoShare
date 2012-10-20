@@ -103,6 +103,10 @@ ROOT_URLCONF = 'videoShare.urls'
 WSGI_APPLICATION = 'videoShare.wsgi.application'
 
 TEMPLATE_DIRS = (
+	'/home/camille/DjangoProject/videoShare/template',
+	'/usr/lib/python2.7/site-packages/django/contrib/auth/tests/templates/registration'
+	# ['/usr/lib/python2.7/site-packages/django']
+
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
