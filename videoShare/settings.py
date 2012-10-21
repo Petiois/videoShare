@@ -104,6 +104,7 @@ WSGI_APPLICATION = 'videoShare.wsgi.application'
 
 TEMPLATE_DIRS = (
 	'/home/camille/DjangoProject/videoShare/template',
+	'/home/petiois/DjangoProject/videoShare/template',
 	'/usr/lib/python2.7/site-packages/django/contrib/auth/tests/templates/registration'
 	# ['/usr/lib/python2.7/site-packages/django']
 

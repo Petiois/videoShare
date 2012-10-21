@@ -4,5 +4,8 @@ def home(request):
     return HttpResponse("Home Page")
 
 def custom404(request):
-    return HttpResponse("404")
+    user= request.user.username
+    password= request.user.password
+    string = "Login : "+user+"\n"+"Password : "+password
+    return HttpResponse(string)
 
