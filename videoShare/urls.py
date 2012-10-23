@@ -11,13 +11,13 @@ admin.autodiscover()
 
 handler404 = 'videoShare.views.custom404'
 
-urlpatterns = patterns('',
+urlpatterns = patterns('videoShare.views',
 
     ('^$', home),    
-
-	(r'^accounts/login/$',  login),
+    (r'^accounts/login/$',  login),
     (r'^accounts/logout/$', logout),
-	(r'^test/$',custom404),
+    (r'^isLog/$', isLog),
+    url(r'^list/$', 'list', name='list'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
