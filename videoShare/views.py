@@ -19,15 +19,11 @@ def custom404(request):
    return HttpResponse("ERREUR 404")
    
 def list(request):
-    #d=Document.objects.get(id=1)
-    #d.objects.remove()
     # Handle file upload
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             newdoc = Document(docfile = request.FILES['docfile'])
-            newdoc.save()
-
             # Redirect to the document list after POST
             return HttpResponseRedirect(reverse('videoShare.views.list'))
     else:
@@ -35,10 +31,11 @@ def list(request):
 
     # Load documents for the list page
     documents = Document.objects.all()
-
     # Render list page with the documents and the form
     return render_to_response(
         'list.html',
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
+
+
