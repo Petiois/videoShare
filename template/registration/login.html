@@ -2,47 +2,49 @@
     
 {% block content %}
     
-<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Erreur</h3>
+<div class="span12 pagination-centered">
+    <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Erreur</h3>
+        </div>
+        <div class="modal-body">
+            <p>Erreur, mauvais utilisateur ou mot de passe</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fermer</button>
+        </div>
     </div>
-    <div class="modal-body">
-        <p>Erreur, mauvais utilisateur ou mot de passe</p>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fermer</button>
-    </div>
-</div>
-      
-<div class="span4 offset4">
-    <div class="well well-large">
-        <form action="" class="form-horizontal" method="post"> {% csrf_token %}
-          
-            <div class="control-group">
-                <label class="control-label pull-left" for="username">Nom d'utilisateur:</label>
-                <div class="controls">
-                    <input type="text" class="input-small" name="username" id="username">
+        
+    <div class="span4 offset4">
+        <div class="well well-large">
+            <form action="" class="form-horizontal" method="post"> {% csrf_token %}
+                
+                <div class="control-group">
+                    <label class="control-label pull-left" for="username">Nom d'utilisateur:</label>
+                    <div class="controls">
+                        <input type="text" class="input-small" name="username" id="username">
+                    </div>
                 </div>
-            </div>
-              
-            <div class="control-group">
-                <label class="control-label" for="password">Mot De passe:</label>
-                <div class="controls">
-                    <input type="password" class="input-small" name="password" id="password">
+                    
+                <div class="control-group">
+                    <label class="control-label" for="password">Mot De passe:</label>
+                    <div class="controls">
+                        <input type="password" class="input-small" name="password" id="password">
+                    </div>
                 </div>
-            </div>
-              
-            <div class="control-group">
-                <button type="submit"  value="login" class="btn">Valider</button>
-                <div class="controls">
-                    <input type="hidden" name="next" value="/">
+                    
+                <div class="control-group">
+                    <button type="submit"  value="login" class="btn">Valider</button>
+                    <div class="controls">
+                        <input type="hidden" name="next" value="/">
+                    </div>
                 </div>
-            </div>
-              
-        </form>
+                    
+            </form>
+        </div>
+            
     </div>
-      
 </div>
            
 {% if form.errors %}

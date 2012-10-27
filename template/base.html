@@ -7,6 +7,7 @@
         <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
         <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
         <title>{% block title %}{% endblock %}</title>
     </head>
     
@@ -27,7 +28,9 @@
                             <ul class="dropdown-menu">
                                 {% if user.is_authenticated %}
                                 <li><a href="/accounts/logout">Se Deconnecter</a></li>
+                                <li><a href="/upload">Ajouter une Video</a></li>
                                 <li><a href="/list">Voir Mes Videos</a></li>
+                                <li><a href="/accounts/profiles">Parametres de Comptes</a></li>                          
                                 {% else %}
                                 <li><a href="/accounts/login">Se Connecter</a></li>
                                 <li><a href="/accounts/register">Creer un Compte</a></li>
@@ -56,7 +59,7 @@
                     </div>
                         
                         <div class="span10">                   
-                            <div class="span12 pagination-centered">
+                            <div class="span12">
                                 {% block content %}                                                             
                                 {% endblock %}                              
                             </div>

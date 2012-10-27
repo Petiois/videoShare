@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.template.loader import get_template
+from django import *
+from django.contrib.auth.models import *
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.template import Context
 from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import *
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -70,7 +74,7 @@ def upload(request):
             newdoc.docfile.name = m.hexdigest()+os.path.splitext(newdoc.docfile.name)[1]
             newdoc.save()
             # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('videoShare.views.upload'))
+            return redirect('/')
     else:
         form = DocumentForm() # A empty, unbound form
 
@@ -85,3 +89,29 @@ def upload(request):
 
 def secu(request,offset):
     return
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
+
+def register(request):
+    if request.method == 'POST': 
+        toto = request.POST['sender']
+        tata = request.POST['message']
+        User.objects.create_user(toto,None,tata)
+        return HttpResponse(toto+tata)
+# If the form has been submitted...
+       # form = ContactForm(request.POST) # A form bound to the POST data
+       # if form.is_valid(): # All validation rules pass
+            # Process the data in form.cleaned_data
+            # ...
+        #    return HttpResponseRedirect('/thanks/') # Redirect after POST
+    else:
+     #   form = ContactForm() # An unbound form
+
+        form = 2
+        return render(request, 'registration/newuser.html', {
+           'form': form,
+        })
+
+

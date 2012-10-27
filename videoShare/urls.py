@@ -15,9 +15,11 @@ urlpatterns = patterns('videoShare.views',
 
     ('^$', home),    
     (r'^accounts/login/$',  login),
-    (r'^accounts/logout/$', logout),
+    (r'^accounts/logout/$', logout_view),
     (r'^isLog/$', isLog),
     (r'^list/(\d{1,2})/$', 'detail'),
+    (r'^accounts/register/$', register),
+
     url(r'^upload/$','upload', name='upload'),
     url(r'^list/$', 'list', name='list'),
 
