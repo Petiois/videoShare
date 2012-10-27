@@ -1,22 +1,19 @@
 # -*- coding: utf-8 -*-
-from django.template.loader import get_template
-from django import *
 from django.contrib.auth.models import *
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-from django.template import Context
 from django.http import HttpResponse
 from django.shortcuts import *
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
 from videoShare.models import Document
 from videoShare.forms import DocumentForm
-from django.http import HttpResponse
 from hashlib import sha256
 import os.path
 import datetime
+from django.db import IntegrityError
+
 
 
 def home(request):
@@ -33,7 +30,7 @@ def custom404(request):
 @login_required
 def list(request):
     # Load documents for the list page
-    documents = Document.objects.all()
+    documents = Document.objects.filter(author=request.user)
     # Render list page with the documents and the form
     return render_to_response(
         'list.html',
@@ -48,7 +45,7 @@ def detail(request, offset):
     except ValueError:
         raise custom404()
     doc = Document.objects.filter(id=offset)
-    if request.user.username==doc.get(id=offset).author:
+    if request.user==doc.get(id=offset).author:
         varBool=True
     else:
         varBool=False
@@ -63,7 +60,7 @@ def upload(request):
         if form.is_valid():
             temp = Document(docfile = request.FILES['docfile'])
             newdoc = Document(
-                author = request.user.username,
+                author = request.user,
                 name = temp.docfile.name,
                 date = datetime.datetime.now(),
                 docfile = temp.docfile
@@ -96,22 +93,17 @@ def logout_view(request):
 
 def register(request):
     if request.method == 'POST': 
-        toto = request.POST['sender']
-        tata = request.POST['message']
-        User.objects.create_user(toto,None,tata)
-        return HttpResponse(toto+tata)
-# If the form has been submitted...
-       # form = ContactForm(request.POST) # A form bound to the POST data
-       # if form.is_valid(): # All validation rules pass
-            # Process the data in form.cleaned_data
-            # ...
-        #    return HttpResponseRedirect('/thanks/') # Redirect after POST
+        login = request.POST['login']
+        password = request.POST['password']
+        try:
+            User.objects.create_user(login,None,password)
+        except IntegrityError:
+                                                                    #TODO
+            return HttpResponse('Le compte existe déjà')
+        return HttpResponseRedirect('/')
     else:
      #   form = ContactForm() # An unbound form
-
-        form = 2
         return render(request, 'registration/newuser.html', {
-           'form': form,
         })
 
 
