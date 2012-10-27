@@ -17,6 +17,8 @@ urlpatterns = patterns('videoShare.views',
     (r'^accounts/login/$',  login),
     (r'^accounts/logout/$', logout),
     (r'^isLog/$', isLog),
+    (r'^list/(\d{1,2})/$', 'detail'),
+    url(r'^upload/$','upload', name='upload'),
     url(r'^list/$', 'list', name='list'),
 
     # Uncomment the admin/doc line below to enable admin documentation:

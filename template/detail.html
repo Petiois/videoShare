@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- List of uploaded documents -->
+    {% if doc %}
+        <ul>
+            {% for document in doc %}
+                {% if varBool %}
+                <ul>
+                    <li><label>Nom : </label><a>{{ document.name }}</a></li>
+                    <li><label>Postée par : </label><a>{{ document.author }}</a></li>
+                    <li><label>Date : </label><a>{{ document.date }}</a></li>
+                </ul>
+                {% else %}
+                    <p>Vous n'êtes pas le posteur de cette vidéo</p>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun Documents.</p>
+    {% endif %}
+
+{% endblock %}
