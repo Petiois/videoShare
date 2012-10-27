@@ -2,6 +2,7 @@
 *.pot
 *.pyc
 *.db
+*.orig
 *.*~
 local_settings.py
 *.komodoproject
