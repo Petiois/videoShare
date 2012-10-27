@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.template.loader import get_template
+from django.contrib.auth.decorators import login_required
 from django.template import Context
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
@@ -12,7 +13,7 @@ from django.http import HttpResponse
 from hashlib import sha256
 
 def home(request):
-    return render_to_response('home.html')
+    return render_to_response('home.html',context_instance=RequestContext(request))
 
 def isLog(request):
    login = request.user.username
@@ -22,6 +23,7 @@ def isLog(request):
 def custom404(request):       
    return HttpResponse("ERREUR 404")
    
+@login_required
 def list(request):
     # Handle file upload
     if request.method == 'POST':
