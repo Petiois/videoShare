@@ -6,6 +6,10 @@ from django.core.urlresolvers import reverse
 from videoShare.models import Document
 from videoShare.forms import DocumentForm
 from django.http import HttpResponse
+from hashlib import sha256
+import os.path
+import datetime
+
 
 def home(request):
    return HttpResponse("Home Page")
@@ -23,7 +27,18 @@ def list(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
-            newdoc = Document(docfile = request.FILES['docfile'])
+            temp = Document(docfile = request.FILES['docfile'])
+            newdoc = Document(
+                    author = request.user.username,
+                    name = temp.docfile.name,
+                    date = datetime.datetime.now(),
+                    docfile = temp.docfile
+                )
+            #newdoc = Document(docfile = request.FILES['docfile'])
+            m = sha256()
+            m.update(newdoc.docfile.read())
+            newdoc.docfile.name = m.hexdigest()+os.path.splitext(newdoc.docfile.name)[1]
+            newdoc.save()
             # Redirect to the document list after POST
             return HttpResponseRedirect(reverse('videoShare.views.list'))
     else:
@@ -37,5 +52,4 @@ def list(request):
         {'documents': documents, 'form': form},
         context_instance=RequestContext(request)
     )
-
 
