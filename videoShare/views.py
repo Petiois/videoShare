@@ -18,7 +18,17 @@ from django.db import IntegrityError
 
 
 def home(request):
-    return render_to_response('home.html',context_instance=RequestContext(request))
+    Liste=[]
+    documents = Document.objects.all()
+    count=0
+    try:
+        for document in documents:
+            if count<10:
+                Liste.append(document)
+                count += 1
+    except Document.DoesNotExist:
+        return HttpResponse("Le document demandé n'existe pas")
+    return render_to_response('home.html',{'Liste':Liste},context_instance=RequestContext(request))
 
 def isLog(request):
    login = request.user.username
