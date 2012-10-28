@@ -27,7 +27,7 @@ def home(request):
                 Liste.append(document)
                 count += 1
     except Document.DoesNotExist:
-        return HttpResponse("Le document demandé n'existe pas")
+        return redirect('/list')
     return render_to_response('home.html',{'Liste':Liste},context_instance=RequestContext(request))
 
 def isLog(request):
@@ -75,7 +75,7 @@ def detail(request, offset):
                 'detail.html',{'doc':doc, 'varBool':varBool,'videoPath':videoPath },context_instance=RequestContext(request)
             )
         except Document.DoesNotExist:
-            return HttpResponse("Le document demandé n'existe pas")
+            return redirect('/list')
         except ValueError:
             raise custom404()
 
