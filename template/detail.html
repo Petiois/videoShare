@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="span6 offset3">
     <div class="well well-large">
         {% if doc %}
@@ -11,7 +10,10 @@
                 <dt>Nom :</dt><dd>{{ document.name }}<dd>
                 <dt>Postée par :</dt><dd>{{ document.author }}</dd>
                 <dt>Date :</dt><dd>{{ document.date }}</dd>
-           
+
+                <form action="./" method="post">{% csrf_token %}
+                    <input type="submit" value="Supprimer" />
+                </form>
             {% else %}
             <p>Vous n'êtes pas le posteur de cette vidéo</p>
             {% endif %}
@@ -22,4 +24,5 @@
         {% endif %}
     </div>
 </div>
+
 {% endblock %}

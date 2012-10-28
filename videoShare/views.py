@@ -40,19 +40,26 @@ def list(request):
 
 
 def detail(request, offset):
-    try :
-        offset = int(offset)
-    except ValueError:
-        raise custom404()
-    doc = Document.objects.filter(id=offset)
-    if request.user==doc.get(id=offset).author:
-        varBool=True
+
+    if request.method == 'POST':
+        Document.objects.filter(id=offset).delete()
+        return HttpResponse('done')
     else:
-        varBool=False
-    #import pdb; pdb.set_trace()
-    return render_to_response(
-        'detail.html',{'doc':doc, 'varBool':varBool}
-    )
+        try :
+            offset = int(offset)
+            doc = Document.objects.filter(id=offset)
+            if request.user==doc.get(id=offset).author:
+                varBool=True
+            else:
+                varBool=False
+            return render_to_response(
+                'detail.html',{'doc':doc, 'varBool':varBool},context_instance=RequestContext(request)
+            )
+        except Document.DoesNotExist:
+            return HttpResponse("Le document demandé n'existe pas")
+        except ValueError:
+            raise custom404()
+
 
 def upload(request):
     if request.method == 'POST':
@@ -105,5 +112,3 @@ def register(request):
      #   form = ContactForm() # An unbound form
         return render(request, 'registration/newuser.html', {
         })
-
-
