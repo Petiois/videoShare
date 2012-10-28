@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a94c61b-1814-42a3-b4ca-0c55fd5caf6e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/stream.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/home.html" afterPath="$PROJECT_DIR$/template/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoShare/urls.py" afterPath="$PROJECT_DIR$/videoShare/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoShare/views.py" afterPath="$PROJECT_DIR$/videoShare/views.py" />
     </list>
     <ignored path="videoShare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,13 +31,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/videoShare/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1153" selection-end="1153" vertical-scroll-proportion="-11.612904">
+            <state line="150" column="28" selection-start="5201" selection-end="5201" vertical-scroll-proportion="0.67445743">
               <folding>
                 <element signature="e#24#64#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stream.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/stream.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="14" selection-start="132" selection-end="132" vertical-scroll-proportion="-4.375">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="0" selection-start="1296" selection-end="1310" vertical-scroll-proportion="-19.583334">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -47,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="301" selection-end="301" vertical-scroll-proportion="0.39130434">
+            <state line="14" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="-8.75">
               <folding />
             </state>
           </provider>
@@ -59,11 +81,8 @@
       <file leaf-file-name="list.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="20" selection-start="328" selection-end="328" vertical-scroll-proportion="-6.25">
-              <folding>
-                <marker date="1351455606640" expanded="true" signature="73:118" placeholder="..." />
-                <marker date="1351455606640" expanded="true" signature="107:118" placeholder="..." />
-              </folding>
+            <state line="11" column="39" selection-start="368" selection-end="368" vertical-scroll-proportion="-6.875">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,15 +107,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/registration/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="73" selection-start="402" selection-end="402" vertical-scroll-proportion="-5.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/videoShare/settings.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,19 +119,10 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/videoShare/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0">
+            <state line="18" column="27" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upload.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/upload.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="797" selection-end="797" vertical-scroll-proportion="-14.375">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -139,22 +140,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/template/data.html" />
         <option value="$PROJECT_DIR$/template/infoData.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/videoShare/forms.py" />
         <option value="$PROJECT_DIR$/template/signin.html" />
         <option value="$USER_HOME$/.PyCharm20/system/python_stubs/-2066100796/__builtin__.py" />
         <option value="$PROJECT_DIR$/template/detail.html" />
-        <option value="$PROJECT_DIR$/videoShare/urls.py" />
         <option value="$PROJECT_DIR$/template/registration/profile.html" />
         <option value="$PROJECT_DIR$/videoShare/settings.py" />
         <option value="$PROJECT_DIR$/template/list.html" />
         <option value="$PROJECT_DIR$/template/upload.html" />
         <option value="$PROJECT_DIR$/videoShare/models.py" />
         <option value="$PROJECT_DIR$/template/registration/newuser.html" />
+        <option value="$PROJECT_DIR$/template/stream.html" />
         <option value="$PROJECT_DIR$/videoShare/views.py" />
         <option value="$PROJECT_DIR$/template/home.html" />
+        <option value="$PROJECT_DIR$/videoShare/urls.py" />
       </list>
     </option>
   </component>
@@ -525,13 +526,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/template/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="631" selection-end="631" vertical-scroll-proportion="0.4173913">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="52" selection-start="149" selection-end="149" vertical-scroll-proportion="0.13043478">
@@ -542,13 +536,6 @@
     <entry file="file://$USER_HOME$/.PyCharm20/system/python_stubs/-2066100796/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="0" selection-start="1090" selection-end="1090" vertical-scroll-proportion="0.33222038">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="833" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
@@ -578,16 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.10016695">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="20" selection-start="328" selection-end="328" vertical-scroll-proportion="-6.25">
-          <folding>
-            <marker date="1351455606640" expanded="true" signature="73:118" placeholder="..." />
-            <marker date="1351455606640" expanded="true" signature="107:118" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,9 +598,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/template/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1296" selection-end="1310" vertical-scroll-proportion="-19.583334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/stream.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="14" selection-start="132" selection-end="132" vertical-scroll-proportion="-4.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="39" selection-start="368" selection-end="368" vertical-scroll-proportion="-6.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="284" selection-end="284" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/videoShare/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0">
+        <state line="18" column="27" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
@@ -632,17 +637,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/videoShare/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1153" selection-end="1153" vertical-scroll-proportion="-11.612904">
+        <state line="150" column="28" selection-start="5201" selection-end="5201" vertical-scroll-proportion="0.67445743">
           <folding>
             <element signature="e#24#64#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="301" selection-end="301" vertical-scroll-proportion="0.39130434">
-          <folding />
         </state>
       </provider>
     </entry>

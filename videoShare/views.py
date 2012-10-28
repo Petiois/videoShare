@@ -147,4 +147,11 @@ def register(request):
         return render(request, 'registration/newuser.html', {
         })
 
-
+def stream(request, offset):
+    temp = Document.objects.get(id=offset)
+    docPath = temp.getDocfile()
+    videoPath = '/media/' + docPath
+    path = MEDIA_ROOT+'/'+docPath
+    return render_to_response(
+        'stream.html',{'videoPath':videoPath },context_instance=RequestContext(request)
+    )
