@@ -10,10 +10,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/videoShare/media/documents/2012/10/27/4b1163149c8445c79fc60a73fbde2d41bfb3a30c166e776404280999f47ad3f5_2.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/videoShare/media/documents/2012/10/27/4b1163149c8445c79fc60a73fbde2d41bfb3a30c166e776404280999f47ad3f5_3.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/videoShare/media/documents/2012/10/27/images.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/home.html" afterPath="$PROJECT_DIR$/template/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoShare/models.py" afterPath="$PROJECT_DIR$/videoShare/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoShare/views.py" afterPath="$PROJECT_DIR$/videoShare/views.py" />
     </list>
     <ignored path="videoShare.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,10 +34,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/videoShare/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="43" selection-start="3956" selection-end="3956" vertical-scroll-proportion="-10.096774">
+            <state line="117" column="0" selection-start="3817" selection-end="3817" vertical-scroll-proportion="0.44542253">
               <folding>
                 <element signature="e#24#64#0" expanded="true" />
               </folding>
@@ -114,10 +110,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/videoShare/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.3505843">
+            <state line="14" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -617,15 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/videoShare/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="43" selection-start="3956" selection-end="3956" vertical-scroll-proportion="-10.096774">
-          <folding>
-            <element signature="e#24#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/videoShare/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="16" selection-start="290" selection-end="290" vertical-scroll-proportion="-8.225806">
@@ -644,9 +631,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/videoShare/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.3505843">
+        <state line="14" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoShare/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="0" selection-start="3817" selection-end="3817" vertical-scroll-proportion="0.44542253">
+          <folding>
+            <element signature="e#24#64#0" expanded="true" />
           </folding>
         </state>
       </provider>

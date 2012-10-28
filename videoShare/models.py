@@ -12,7 +12,6 @@ class Document(models.Model):
     def getDocfile(self):
         return self.docfile.name
 
-
     def __unicode__(self):
         return (self.docfile.name)
 

@@ -1,8 +1,106 @@
-<form action="./" method="post">{% csrf_token %}
+{% extends "base.html" %}
+    
+{% block content %}
 
-<p><label for="id_login">Login:</label>
-    <input type="text" name="login" id="id_login" /></p>
-<p><label for="id_password">Mot de passe:</label>
-    <input type="text" name="password" id="id_password" /></p>
-<input type="submit" value="Submit" />
-</form>
+
+    <div class="modal hide fade" id="modalWrongPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Erreur</h3>
+        </div>
+        <div class="modal-body">
+            <p>Erreur, les mots de passe ne correspondent pas</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fermer</button>
+        </div>
+    </div>
+    
+   
+    <div class="modal hide fade" id="modalNoLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Erreur</h3>
+        </div>
+        <div class="modal-body">
+            <p>Erreur, veuillez entrer un login</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fermer</button>
+        </div>
+    </div>
+        
+    
+    <div class="modal hide fade" id="modalExistingAccount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Erreur</h3>
+        </div>
+        <div class="modal-body">
+            <p>Erreur, un compte existe deja avec ce login</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Fermer</button>
+        </div>
+    </div>
+    
+
+<div class="span12 pagination-centered">
+    <div class="span6 offset3">
+        <div class="well well-large">
+            <div class="well well-large">
+            <form action="./" class="form-horizontal" method="post">{% csrf_token %}
+
+                <div class="control-group">
+                    <label class="control-label" for="id_login">Login:</label>
+                    <div class="controls">
+                        <input type="text" name="login" id="id_login" value="{{ login }}" />
+                    </div>
+                </div>
+                <div class="control-group">
+
+                    <label class="control-label" for="id_password">Mot de passe:</label>
+                    <div class="controls">
+                        <input type="password" name="password" id="id_password" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="id_password2">Mot de passe:</label>
+                    <div class="controls">
+                        <input type="password" name="password2" id="id_password2" />
+                    </div>
+                </div>
+                
+                <button type="submit"  value="Sybmit" class="btn btn-primary">Creer mon Compte!</button>
+            </form>
+        </div>
+            </div>
+    </div>
+</div>
+
+
+{% if wrongTyping %}
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#modalWrongPassword').modal('show')
+    });
+</script>
+{% endif %}
+
+{% if noUserName %}
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#modalNoLogin').modal('show')
+    });
+</script>
+{% endif %}
+
+{% if accountAlreadyCreated %}
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#modalExistingAccount').modal('show')
+    });
+</script>
+{% endif %}
+
+{% endblock %}

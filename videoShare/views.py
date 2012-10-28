@@ -49,7 +49,7 @@ def list(request):
         context_instance=RequestContext(request)
     )
 
-
+@login_required
 def detail(request, offset):
 
     if request.method == 'POST':
@@ -58,9 +58,13 @@ def detail(request, offset):
         Document.objects.filter(id=offset).delete()
         path = MEDIA_ROOT+'/'+docPath
         os.remove(path)
-        return HttpResponse(path)
+        return HttpResponseRedirect('/list')
     else:
         try :
+            temp = Document.objects.get(id=offset)
+            docPath = temp.getDocfile()
+            videoPath = '/media/' + docPath
+            path = MEDIA_ROOT+'/'+docPath
             offset = int(offset)
             doc = Document.objects.filter(id=offset)
             if request.user==doc.get(id=offset).author:
@@ -68,14 +72,14 @@ def detail(request, offset):
             else:
                 varBool=False
             return render_to_response(
-                'detail.html',{'doc':doc, 'varBool':varBool},context_instance=RequestContext(request)
+                'detail.html',{'doc':doc, 'varBool':varBool,'videoPath':videoPath },context_instance=RequestContext(request)
             )
         except Document.DoesNotExist:
             return HttpResponse("Le document demandé n'existe pas")
         except ValueError:
             raise custom404()
 
-
+@login_required
 def upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -91,7 +95,7 @@ def upload(request):
             m.update(newdoc.docfile.read())
             newdoc.docfile.name = m.hexdigest()+os.path.splitext(newdoc.docfile.name)[1]
             newdoc.save()
-            return redirect('/')
+            return redirect('/list')
     else:
         form = DocumentForm() # A empty, unbound form
 
@@ -117,16 +121,30 @@ def logout_view(request):
     return redirect('/')
 
 def register(request):
+    wrongTyping = False
+    noUserName = False
     if request.method == 'POST': 
-        login = request.POST['login']
-        password = request.POST['password']
-        try:
+         login = request.POST['login']
+         password = request.POST['password']
+         password2 = request.POST['password2']
+         if (login == '') :
+            noUserName = True
+            return render(request, 'registration/newuser.html', { 'noUserName' : noUserName
+            })
+         if (password2 != password or password2 =='' or password =='') :
+            wrongTyping = True
+            return render(request, 'registration/newuser.html', { 'wrongTyping' : wrongTyping ,'login' : login
+            })
+         try:
             User.objects.create_user(login,None,password)
-        except IntegrityError:
-                                                                    #TODO
-            return HttpResponse('Le compte existe déjà')
-        return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/')
+         except IntegrityError:
+            accountAlreadyCreated = True
+            return render(request, 'registration/newuser.html', { 'accountAlreadyCreated' : accountAlreadyCreated
+            })
     else:
      #   form = ContactForm() # An unbound form
         return render(request, 'registration/newuser.html', {
         })
+
+

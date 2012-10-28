@@ -1,5 +1,6 @@
 *.log
 *.pot
+media/*
 *.pyc
 *.db
 *.orig
@@ -8,3 +9,5 @@ local_settings.py
 *.komodoproject
 videoShare/media/*
 *.idea
+.idea/*
+!.gitignore

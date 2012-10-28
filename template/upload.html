@@ -1,24 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <!-- Upload form. Note enctype attribute! -->
+<div class="span12 pagination-centered">
+    <div class="span6 offset3">
+        <div class="well well-large">
+            <div class="well well-large">
+                <h2> Envoie de fichier </h2>
+                <form class="form-horizontal" action="{% url upload %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
 
-<div class="span6 offset3">
-    <div class="hero-unit">
-            <h2> Envoie de fichier </h2>
-        <form class="form-horizontal" action="{% url upload %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+                    <p>
+                        {{ form.docfile }}
+                    </p>
 
-            <p>
-                {{ form.docfile }}
-            </p>
+                    <p>
+                        <br>
 
-            <p>
-                <button type="submit" class="btn btn-primary" value="Upload">Envoyer</button>
-            </p>
+                        <button type="submit" class="btn btn-primary" value="Upload">Envoyer</button>
+                    </p>
 
-        </form>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -1,31 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- List of uploaded documents -->
-    {% if documents %}
-        <ul>
-        {% for document in documents %}
-            <li><a href="{{document.id }}">{{ document.name }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Aucun Documents.</p>
-    {% endif %}
-
+<div class="span6 offset3">
+    <div class="well well-large">
 <<<<<<< HEAD
-=======
-        <!-- Upload form. Note enctype attribute! -->
+        <!-- List of uploaded documents -->
+        {% if documents %}
+        <ul>
+            {% for document in documents %}
+            <li><a href="{{document.id }}">{{ document.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Aucun Documents.</p>
+        {% endif %}
 
-        <form action="{% url list %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <p>{{ form.non_field_errors }}</p>
-            <p>{{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
-            <p>
-                {{ form.docfile.errors }}
-                {{ form.docfile }}
-            </p>
-            <p><input type="submit" value="Upload" /></p>
-        </form>
- 
+    </div>
+</div>
+
+    <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}</a></li>
+
+=======
+        <div class="well well-large">
+            <!-- List of uploaded documents -->
+            {% if documents %}
+            <ol class="unstyled">
+                {% for document in documents %}
+                <li>
+                    <a href="{{document.id }}">{{ document.name }}</a>
+                </li>
+                {% endfor %}
+            </ol>
+            {% else %}
+            <div class="pagination-centered">
+                
+                <h2>Aucun Documents.</h2>
+                
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
 >>>>>>> upstream/master
 {% endblock %}
