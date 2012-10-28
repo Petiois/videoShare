@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+
+ <div class="span12 pagination-centered">
     <div class="span6 offset3">
         <div class="well well-large">
+            <div class="well well-large">
+                
                 <dl class="dl-horizontal">
 
 
@@ -12,12 +16,19 @@
                             <dt>Date d'inscription :</dt><dd> &nbsp;{{ profile.date_joined }}</dd>
 
                 </dl>
-
+                <div class="alert">
+                    
+               
+                <p>
+                    Cette action est critique. Vous allez perdre votre compte et vos videos
+                </p>
             <form action="./" method="post">{% csrf_token %}
-                <input type="submit" value="Supprimer le compte" />
+            <button type="submit"  value="Supprimer le compte" class="btn btn-danger">Supprimer le compte</button>
             </form>
-
+            </div>
+            </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
