@@ -1,28 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
+
+
 <div class="span6 offset3">
     <div class="well well-large">
-        {% if doc %}
-        <dl class="dl-horizontal">
-            {% for document in doc %}
-            {% if varBool %}
-            
+        <div class="well well-large">
+            {% if doc %}
+            <dl class="dl-horizontal">
+                {% for document in doc %}
+                {% if varBool %}
+
                 <dt>Nom :</dt><dd>{{ document.name }}<dd>
                 <dt>Postée par :</dt><dd>{{ document.author }}</dd>
                 <dt>Date :</dt><dd>{{ document.date }}</dd>
 
-                <form action="./" method="post">{% csrf_token %}
-                    <input type="submit" value="Supprimer" />
-                </form>
+                &nbsp;
+
+                <div class="span12 pagination-centered">
+                    <form action="./" method="post">{% csrf_token %}
+                        <button type="submit"  value="Supprimer" class="btn btn-primary">Supprimer</button>
+                    </form>
+                </div>
+                {% else %}
+                <p>Vous n'êtes pas le posteur de cette vidéo</p>
+                {% endif %}
+                {% endfor %}
+            </dl>
             {% else %}
-            <p>Vous n'êtes pas le posteur de cette vidéo</p>
+            <p>Aucun Documents.</p>
             {% endif %}
-            {% endfor %}
-        </dl>
-        {% else %}
-        <p>Aucun Documents.</p>
-        {% endif %}
+        </div>
     </div>
 </div>
+
 
 {% endblock %}

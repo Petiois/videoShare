@@ -4,7 +4,8 @@
 <!-- Upload form. Note enctype attribute! -->
 
 <div class="span6 offset3">
-    <div class="hero-unit">
+    <div class="well well-large">
+        <div class="well well-large">
             <h2> Envoie de fichier </h2>
         <form class="form-horizontal" action="{% url upload %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -14,11 +15,13 @@
             </p>
 
             <p>
+                <br>
                 <button type="submit" class="btn btn-primary" value="Upload">Envoyer</button>
             </p>
 
         </form>
     </div>
+        </div>
 </div>
 
 {% endblock %}

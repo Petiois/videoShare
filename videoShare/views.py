@@ -38,12 +38,11 @@ def list(request):
         context_instance=RequestContext(request)
     )
 
-
+@login_required
 def detail(request, offset):
-
     if request.method == 'POST':
         Document.objects.filter(id=offset).delete()
-        return HttpResponse('done')
+        return redirect('/list')
     else:
         try :
             offset = int(offset)
@@ -60,7 +59,7 @@ def detail(request, offset):
         except ValueError:
             raise custom404()
 
-
+@login_required
 def upload(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -78,7 +77,7 @@ def upload(request):
             newdoc.docfile.name = m.hexdigest()+os.path.splitext(newdoc.docfile.name)[1]
             newdoc.save()
             # Redirect to the document list after POST
-            return redirect('/')
+            return redirect('/list')
     else:
         form = DocumentForm() # A empty, unbound form
 
@@ -99,15 +98,28 @@ def logout_view(request):
     return redirect('/')
 
 def register(request):
+    wrongTyping = False
+    noUserName = False
     if request.method == 'POST': 
-        login = request.POST['login']
-        password = request.POST['password']
-        try:
-            User.objects.create_user(login,None,password)
-        except IntegrityError:
+         login = request.POST['login']
+         password = request.POST['password']
+         password2 = request.POST['password2']
+         if (login == '') :
+            noUserName = True
+            return render(request, 'registration/newuser.html', { 'noUserName' : noUserName
+            })
+         if not(password2 == password) :
+            wrongTyping = True
+            return render(request, 'registration/newuser.html', { 'wrongTyping' : wrongTyping ,'login' : login
+            })
+         try:
+            accountAlreadyCreated = True
+            return render(request, 'registration/newuser.html', { 'accountAlreadyCreated' : accountAlreadyCreated
+            })
+         except IntegrityError:
                                                                     #TODO
             return HttpResponse('Le compte existe déjà')
-        return HttpResponseRedirect('/')
+         return HttpResponseRedirect('./')
     else:
      #   form = ContactForm() # An unbound form
         return render(request, 'registration/newuser.html', {

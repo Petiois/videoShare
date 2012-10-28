@@ -3,17 +3,24 @@
 
 <div class="span6 offset3">
     <div class="well well-large">
-        <!-- List of uploaded documents -->
-        {% if documents %}
-        <ul>
-            {% for document in documents %}
-            <li><a href="{{document.id }}">{{ document.name }}</a></li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p>Aucun Documents.</p>
-        {% endif %}
-
+        <div class="well well-large">
+            <!-- List of uploaded documents -->
+            {% if documents %}
+            <ul>
+                {% for document in documents %}
+                <li>
+                    <a href="{{document.id }}">{{ document.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="pagination-centered">
+                
+                <h2>Aucun Documents.</h2>
+                
+            </div>
+            {% endif %}
+        </div>
     </div>
 </div>
 {% endblock %}
