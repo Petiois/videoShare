@@ -6,6 +6,8 @@ TEMPLATE_DEBUG = DEBUG
 import os.path
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
+PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -119,9 +121,10 @@ ROOT_URLCONF = 'videoShare.urls'
 WSGI_APPLICATION = 'videoShare.wsgi.application'
 
 TEMPLATE_DIRS = (
-	'/home/camille/DjangoProject/videoShare/template',
-	'/home/petiois/DjangoProject/videoShare/template',
-	'/usr/lib/python2.7/site-packages/django/contrib/auth/tests/templates/registration'
+    os.path.join(PROJECT_PATH, '../template')
+	#'/home/camille/DjangoProject/videoShare/template',
+	#'/home/petiois/DjangoProject/videoShare/template',
+	#'/usr/lib/python2.7/site-packages/django/contrib/auth/tests/templates/registration'
 	# ['/usr/lib/python2.7/site-packages/django']
 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
