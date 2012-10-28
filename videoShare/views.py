@@ -13,7 +13,6 @@ from videoShare.settings import MEDIA_ROOT
 from hashlib import sha256
 import os
 import datetime
-from models import ProfileUser
 from django.db import IntegrityError
 
 
@@ -78,12 +77,10 @@ def upload(request):
                 date = datetime.datetime.now(),
                 docfile = temp.docfile
             )
-            #newdoc = Document(docfile = request.FILES['docfile'])
             m = sha256()
             m.update(newdoc.docfile.read())
             newdoc.docfile.name = m.hexdigest()+os.path.splitext(newdoc.docfile.name)[1]
             newdoc.save()
-            # Redirect to the document list after POST
             return redirect('/')
     else:
         form = DocumentForm() # A empty, unbound form

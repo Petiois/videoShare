@@ -113,7 +113,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'videoShare.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'videoShare.wsgi.application'
@@ -130,7 +130,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-   'videoShare',
+    'videoShare',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
