@@ -15,7 +15,8 @@ admin.autodiscover()
 handler404 = 'videoShare.views.custom404'
 
 urlpatterns = patterns('videoShare.views',
-    ('^$', home),    
+    ('^$', home),
+    ('^(\d{1,2})/$', stream),
     (r'^accounts/login/$',  login),
     (r'^accounts/logout/$', logout_view),
     (r'^isLog/$', isLog),
