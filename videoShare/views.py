@@ -9,11 +9,11 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from videoShare.models import Document
 from videoShare.forms import DocumentForm
+from videoShare.settings import MEDIA_ROOT
 from hashlib import sha256
-import os.path
+import os
 import datetime
 from django.db import IntegrityError
-from videoShare.settings import MEDIA_ROOT
 
 
 
@@ -41,19 +41,29 @@ def list(request):
 
 @login_required
 def detail(request, offset):
+
     if request.method == 'POST':
+        temp = Document.objects.get(id=offset)
+        docPath = temp.getDocfile()
         Document.objects.filter(id=offset).delete()
-        return redirect('/list')
+        path = MEDIA_ROOT+'/'+docPath
+        os.remove(path)
+        return HttpResponseRedirect('/list')
     else:
         try :
+            temp = Document.objects.get(id=offset)
+            docPath = temp.getDocfile()
+            videoPath = '/media/' + docPath
+            path = MEDIA_ROOT+'/'+docPath
             offset = int(offset)
             doc = Document.objects.filter(id=offset)
+            #assert False
             if request.user==doc.get(id=offset).author:
                 varBool=True
             else:
                 varBool=False
             return render_to_response(
-                'detail.html',{'doc':doc, 'varBool':varBool},context_instance=RequestContext(request)
+                'detail.html',{'doc':doc, 'varBool':varBool,'videoPath':videoPath },context_instance=RequestContext(request)
             )
         except Document.DoesNotExist:
             return HttpResponse("Le document demandé n'existe pas")
@@ -91,8 +101,13 @@ def upload(request):
         context_instance=RequestContext(request)
     )
 
-def secu(request,offset):
-    return
+@login_required
+def profile(request):
+    profile = User.objects.get(username=request.user.username)
+    if request.method == 'POST':
+        User.objects.filter(username=request.user.username).delete()
+        return HttpResponseRedirect('/')
+    return render_to_response('registration/profile.html',{'profile':profile},context_instance=RequestContext(request))
 
 def logout_view(request):
     logout(request)

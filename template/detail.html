@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<div class="span6 offset3">
+<div class="span10 offset1">
     <div class="well well-large">
         <div class="well well-large">
             {% if doc %}
@@ -16,14 +16,18 @@
 
                 &nbsp;
 
+                
+                
+                <div class="flowplayer">
+                    <video src={{videoPath}}></video>
+                </div>
+                
+                &nbsp;
+                
                 <div class="span12 pagination-centered">
                     <form action="./" method="post">{% csrf_token %}
                         <button type="submit"  value="Supprimer" class="btn btn-primary">Supprimer</button>
                     </form>
-                </div>
-                
-                <div class="flowplayer">
-                    <video src="intro.mp4"></video>
                 </div>
                 
                 {% else %}

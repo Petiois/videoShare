@@ -6,9 +6,15 @@ from django.contrib.auth.models import  User
 class Document(models.Model):
     name = models.CharField(max_length=50)
     author = models.ForeignKey(User)
-    date = models.DateField()
-    docfile = models.FileField(upload_to='documents/%Y/%m/%d')
+    date = models.DateTimeField()
+    docfile = models.FileField(upload_to='files')
+
+    def getDocfile(self):
+        return self.docfile.name
+
+    def getAuthor(self):
+        return self.author
 
     def __unicode__(self):
-        return u'%s %s' % (self.name)
+        return (self.docfile.name)
 
