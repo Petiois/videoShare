@@ -18,32 +18,25 @@
         
     <div class="span4 offset4">
         <div class="well well-large">
-            <form action="" class="form-horizontal" method="post"> {% csrf_token %}
+            <form action="" method="post"> {% csrf_token %}
                 
-                <div class="control-group">
-                    <label class="control-label pull-left" for="username">Nom d'utilisateur:</label>
-                    <div class="controls">
-                        <input type="text" class="input-small" name="username" id="username">
-                    </div>
-                </div>
-                    
-                <div class="control-group">
-                    <label class="control-label" for="password">Mot De passe:</label>
-                    <div class="controls">
-                        <input type="password" class="input-small" name="password" id="password">
-                    </div>
-                </div>
-                    
-                <div class="control-group">
-                    <button type="submit"  value="login" class="btn">Valider</button>
-                    <div class="controls">
-                        <input type="hidden" name="next" value="/">
-                    </div>
-                </div>
-                    
+                <p>  
+                    <label  for="username">Nom d'utilisateur:</label>                     
+                    <input type="text" class="input-small" name="username" id="username">
+                        
+                </p>
+                <p>   
+                        
+                    <label for="password">Mot De passe:</label>                        
+                    <input type="password" class="input-small" name="password" id="password">                                                     
+                </p>
+                <p>       
+                    <button type="submit"  value="login" class="btn btn-primary">Valider</button>                    
+                    <input type="hidden" name="next" value="/">                                             
+                </p>
             </form>
         </div>
-            
+
     </div>
 </div>
            

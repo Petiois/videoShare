@@ -51,7 +51,7 @@ def detail(request, offset):
         varBool=False
     #import pdb; pdb.set_trace()
     return render_to_response(
-        'detail.html',{'doc':doc, 'varBool':varBool}
+        'detail.html',{'doc':doc, 'varBool':varBool},context_instance=RequestContext(request)
     )
 
 def upload(request):
