@@ -6,13 +6,13 @@
         <div class="well well-large">
             <!-- List of uploaded documents -->
             {% if documents %}
-            <ul>
+            <ol class="unstyled">
                 {% for document in documents %}
                 <li>
                     <a href="{{document.id }}">{{ document.name }}</a>
                 </li>
                 {% endfor %}
-            </ul>
+            </ol>
             {% else %}
             <div class="pagination-centered">
                 

@@ -13,6 +13,7 @@ from hashlib import sha256
 import os.path
 import datetime
 from django.db import IntegrityError
+from videoShare.settings import MEDIA_ROOT
 
 
 
