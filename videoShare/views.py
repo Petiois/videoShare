@@ -124,18 +124,17 @@ def register(request):
             noUserName = True
             return render(request, 'registration/newuser.html', { 'noUserName' : noUserName
             })
-         if not(password2 == password) :
+         if (password2 != password or password2 =='' or password =='') :
             wrongTyping = True
             return render(request, 'registration/newuser.html', { 'wrongTyping' : wrongTyping ,'login' : login
             })
          try:
+            User.objects.create_user(login,None,password)
+            return HttpResponseRedirect('/')
+         except IntegrityError:
             accountAlreadyCreated = True
             return render(request, 'registration/newuser.html', { 'accountAlreadyCreated' : accountAlreadyCreated
             })
-         except IntegrityError:
-                                                                    #TODO
-            return HttpResponse('Le compte existe déjà')
-         return HttpResponseRedirect('./')
     else:
      #   form = ContactForm() # An unbound form
         return render(request, 'registration/newuser.html', {
