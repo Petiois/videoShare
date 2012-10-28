@@ -9,8 +9,9 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from videoShare.models import Document
 from videoShare.forms import DocumentForm
+from videoShare.settings import MEDIA_ROOT
 from hashlib import sha256
-import os.path
+import os
 import datetime
 from django.db import IntegrityError
 
@@ -42,8 +43,12 @@ def list(request):
 def detail(request, offset):
 
     if request.method == 'POST':
+        temp = Document.objects.get(id=offset)
+        docPath = temp.getDocfile()
         Document.objects.filter(id=offset).delete()
-        return HttpResponse('done')
+        path = MEDIA_ROOT+'/'+docPath
+        os.remove(path)
+        return HttpResponse(path)
     else:
         try :
             offset = int(offset)
