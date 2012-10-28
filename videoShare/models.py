@@ -12,6 +12,17 @@ class Document(models.Model):
     def getDocfile(self):
         return self.docfile.name
 
+    def getAuthor(self):
+        return self.author
+
     def __unicode__(self):
         return (self.docfile.name)
+
+class ProfileUser(models.Model):
+    login = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    last_connexion = models.CharField(max_length=50)
+    register_date = models.CharField(max_length=50)
+    status = models.CharField(max_length=50)
 

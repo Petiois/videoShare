@@ -13,6 +13,7 @@ from videoShare.settings import MEDIA_ROOT
 from hashlib import sha256
 import os
 import datetime
+from models import ProfileUser
 from django.db import IntegrityError
 
 
@@ -96,8 +97,13 @@ def upload(request):
         context_instance=RequestContext(request)
     )
 
-def secu(request,offset):
-    return
+@login_required
+def profile(request):
+    profile = User.objects.get(username=request.user.username)
+    if request.method == 'POST':
+        User.objects.filter(username=request.user.username).delete()
+        return HttpResponseRedirect('/')
+    return render_to_response('registration/profile.html',{'profile':profile},context_instance=RequestContext(request))
 
 def logout_view(request):
     logout(request)

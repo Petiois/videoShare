@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a94c61b-1814-42a3-b4ca-0c55fd5caf6e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/registration/profile.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/videoShare/media/documents/2012/10/27/4b1163149c8445c79fc60a73fbde2d41bfb3a30c166e776404280999f47ad3f5" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/videoShare/media/documents/2012/10/27/4b1163149c8445c79fc60a73fbde2d41bfb3a30c166e776404280999f47ad3f5.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/videoShare/media/documents/2012/10/27/4b1163149c8445c79fc60a73fbde2d41bfb3a30c166e776404280999f47ad3f5_1.jpg" afterPath="" />
@@ -10,6 +11,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/videoShare/media/documents/2012/10/27/images.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoShare/models.py" afterPath="$PROJECT_DIR$/videoShare/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoShare/urls.py" afterPath="$PROJECT_DIR$/videoShare/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/videoShare/views.py" afterPath="$PROJECT_DIR$/videoShare/views.py" />
     </list>
     <ignored path="videoShare.iws" />
@@ -38,10 +40,37 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/videoShare/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="23" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.6260434">
+            <state line="104" column="38" selection-start="3462" selection-end="3462" vertical-scroll-proportion="0.49916527">
               <folding>
                 <element signature="e#24#64#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/videoShare/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="44" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/registration/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="73" selection-start="402" selection-end="402" vertical-scroll-proportion="-5.625">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,15 +79,6 @@
         <entry file="file://$PROJECT_DIR$/videoShare/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="52" column="42" selection-start="1831" selection-end="1831" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/videoShare/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -82,19 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="71" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="detail.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="833" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -103,7 +114,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/videoShare/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="41" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,13 +142,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/template/test.html" />
         <option value="$PROJECT_DIR$/template/contact.html" />
         <option value="$PROJECT_DIR$/template/data.html" />
         <option value="$PROJECT_DIR$/template/infoData.html" />
         <option value="$PROJECT_DIR$/template/upload.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/videoShare/urls.py" />
         <option value="$PROJECT_DIR$/videoShare/forms.py" />
         <option value="$PROJECT_DIR$/template/signin.html" />
         <option value="$PROJECT_DIR$/template/registration/newuser.html" />
@@ -145,14 +154,16 @@
         <option value="$USER_HOME$/.PyCharm20/system/python_stubs/-2066100796/__builtin__.py" />
         <option value="$PROJECT_DIR$/videoShare/settings.py" />
         <option value="$PROJECT_DIR$/template/detail.html" />
+        <option value="$PROJECT_DIR$/videoShare/urls.py" />
         <option value="$PROJECT_DIR$/videoShare/models.py" />
+        <option value="$PROJECT_DIR$/template/registration/profile.html" />
         <option value="$PROJECT_DIR$/videoShare/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="796" />
+    <option name="x" value="1279" />
+    <option name="y" value="-4" />
     <option name="width" value="1282" />
     <option name="height" value="805" />
   </component>
@@ -441,7 +452,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="796" width="1282" height="805" extended-state="6" />
+    <frame x="1279" y="-4" width="1282" height="805" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -517,21 +528,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/template/infoData.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/django/db/models/manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="135" column="0" selection-start="4934" selection-end="4934" vertical-scroll-proportion="0.33222038">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="268" selection-end="268" vertical-scroll-proportion="0.12520868">
           <folding />
         </state>
       </provider>
@@ -546,13 +545,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.10016695" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoShare/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/registration/login.html">
@@ -583,30 +575,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/upload.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="27" selection-start="121" selection-end="121" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoShare/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="41" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/videoShare/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -618,9 +589,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/template/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="833" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoShare/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoShare/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/videoShare/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="44" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/registration/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="73" selection-start="402" selection-end="402" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/videoShare/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="23" selection-start="1505" selection-end="1505" vertical-scroll-proportion="0.6260434">
+        <state line="104" column="38" selection-start="3462" selection-end="3462" vertical-scroll-proportion="0.49916527">
           <folding>
             <element signature="e#24#64#0" expanded="true" />
           </folding>
