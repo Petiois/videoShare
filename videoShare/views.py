@@ -111,6 +111,7 @@ def upload(request):
 @login_required
 def profile(request):
     profile = User.objects.get(username=request.user.username)
+    test = profile.last_name
     if request.method == 'POST':
         User.objects.filter(username=request.user.username).delete()
         return HttpResponseRedirect('/')
@@ -127,20 +128,25 @@ def register(request):
          login = request.POST['login']
          password = request.POST['password']
          password2 = request.POST['password2']
+         name = request.POST['name']
+         surname = request.POST['surname']
          if (login == '') :
             noUserName = True
-            return render(request, 'registration/newuser.html', { 'noUserName' : noUserName
+            return render(request, 'registration/newuser.html', { 'noUserName' : noUserName , 'name' : name , 'surname' : surname
             })
          if (password2 != password or password2 =='' or password =='') :
             wrongTyping = True
             return render(request, 'registration/newuser.html', { 'wrongTyping' : wrongTyping ,'login' : login
             })
          try:
-            User.objects.create_user(login,None,password)
+            new_user = User.objects.create_user(login,None,password)
+            new_user.first_name = surname
+            new_user.last_name = name
+            new_user.save()
             return HttpResponseRedirect('/')
          except IntegrityError:
             accountAlreadyCreated = True
-            return render(request, 'registration/newuser.html', { 'accountAlreadyCreated' : accountAlreadyCreated
+            return render(request, 'registration/newuser.html', { 'accountAlreadyCreated' : accountAlreadyCreated, 'name' : name , 'surname' : surname
             })
     else:
      #   form = ContactForm() # An unbound form
