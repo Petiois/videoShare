@@ -1,0 +1,33 @@
+Projet de Programmation WEB
+
+Objectif :
+   Réalisation d'une application WEB de partage de video avec streaming video
+   
+Developpement :
+   - Application réalisé sous Django 1.4.2 et python 2.7
+   - Base de données : SQLite3 (stockage des media localement, ce qui sur un serveur web ne pose   pasde souci)
+   
+But :
+   Réalisation d'une application WEB dont le but est de permettre l'upload de videos et la visonage de ces videos en streaming.
+
+Fonctionnalités de l'application:
+   - Création de compte utilisateur
+   - Supprimer un compte
+   - se connecter à son compte
+   - Consulter ses vidéos postées
+   - Consulter les information sur les video que l'on a posté
+   - Lire les 10 dernière vidéos postées sur le site
+   
+   
+Membre du groupe :
+   - CROSNIER François
+   - VIOT Camille
+   
+GITHUB : 
+   - Dépo du code source de l'application : https://github.com/Petiois/videoShare
+   
+   
+   
+
+   
+
