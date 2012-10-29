@@ -26,25 +26,7 @@ Membre du groupe :
 GITHUB : 
    - Dépo du code source de l'application : https://github.com/Petiois/videoShare
    
-INSTALL 
-
-   Afin de pouvoir utiliser notre application WEB veuillez réaliser les isntructions suivantes :
-
-   * Avoir une commande "sudo" fonctionnelle, et exécuter les commandes suivantes une à une :
    
-   
-   sudo -k apt-get update
-   sudo -k apt-get install git
-   sudo -k apt-get install python
-
-   wget https://www.djangoproject.com/download/1.4.2/tarball/
-   mv index.html Django-1.4.2.tar.gz
-   tar xzvf Django-1.4.2.tar.gz
-   python Django-1.4.2/setup.py install
-   git clone https://github.com/Petiois/videoShare.git
-
-   python videoShare/manage.py syncdb
-   python videoShare/manage.py runserver
    
 
    
